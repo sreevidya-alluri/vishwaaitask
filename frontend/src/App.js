@@ -5,7 +5,7 @@ import Login from './components/Login';
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Check for existing token when the app loads
+ 
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -14,8 +14,8 @@ const App = () => {
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem('token'); // Clear the token from storage
-    setIsLoggedIn(false); // Update login state
+    localStorage.removeItem('token'); 
+    setIsLoggedIn(false); 
   };
 
   return (
