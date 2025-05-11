@@ -13,7 +13,7 @@ const TaskForm = ({ onClose, onSubmit, existingTask }) => {
 
   useEffect(() => {
     if (existingTask) {
-      // Ensure DueDate is properly formatted for date input
+  
       const formattedTask = {
         ...existingTask,
         DueDate: existingTask.DueDate ? existingTask.DueDate.split('T')[0] : ''
