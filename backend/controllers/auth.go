@@ -42,6 +42,5 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	// No JWT/session for now — simple success response
 	c.JSON(http.StatusOK, gin.H{"message": "Logged in", "userId": user.ID})
 }
