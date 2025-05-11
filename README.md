@@ -52,5 +52,12 @@ POST request to create new tasks.
 PUT request to update tasks.
 
 DELETE request to remove tasks.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+Furthur Enhancements: 
+
+- Make the UI mobile-friendly using CSS media queries and responsive layout components.
+- Give updates to users and notifications for task that needs to be done
+- Provide dark and light modes 
 
