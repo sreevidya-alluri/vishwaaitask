@@ -20,7 +20,7 @@ const Home = ({ onLogout }) => {
 
   const closeForm = () => {
     setShowForm(false);
-    setTaskToEdit(null); // Reset the task to edit when the form is closed
+    setTaskToEdit(null);
   };
 
   const fetchAllItems = async () => {
@@ -38,19 +38,15 @@ const Home = ({ onLogout }) => {
     fetchAllItems();
   }, []);
 
-  // Apply filters whenever search term or status filter changes
   useEffect(() => {
     let result = [...taskItems];
-    
-    // Apply search filter
     if (searchTerm) {
       result = result.filter(task => 
         task.Title.toLowerCase().includes(searchTerm.toLowerCase()) || 
         (task.Description && task.Description.toLowerCase().includes(searchTerm.toLowerCase()))
       );
     }
-    
-    // Apply status filter
+   
     if (statusFilter !== 'all') {
       result = result.filter(task => task.Status === statusFilter);
     }
@@ -60,12 +56,12 @@ const Home = ({ onLogout }) => {
 
   const handleSubmit = (updatedTask) => {
     if (taskToEdit) {
-      // If editing, update the task in the state
+   
       setTaskItems((prev) => 
         prev.map((task) => task.ID === updatedTask.ID ? updatedTask : task)
       );
     } else {
-      // If adding new task, add it to the state
+    
       setTaskItems((prev) => [...prev, updatedTask]);
     }
     closeForm();
@@ -78,7 +74,6 @@ const Home = ({ onLogout }) => {
           method: "DELETE",
         });
         
-        // Remove the task from the state
         setTaskItems((prev) => prev.filter(task => task.ID !== taskId));
       } catch (error) {
         console.error("Failed to delete task:", error);
