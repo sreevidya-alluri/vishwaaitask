@@ -55,7 +55,7 @@ DELETE request to remove tasks.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Furthur Enhancements: 
+Further Enhancements: 
 
 - Make the UI mobile-friendly using CSS media queries and responsive layout components.
 - Give updates to users and notifications for task that needs to be done
