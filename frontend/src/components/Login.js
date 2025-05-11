@@ -14,7 +14,7 @@ const Login = ({ setIsLoggedIn }) => {
     setShowPassword(!showPassword);
   };
   
-  // Clear form when switching between register and login
+  
   const handleModeToggle = () => {
     setUsername('');
     setPassword('');
@@ -42,13 +42,11 @@ const Login = ({ setIsLoggedIn }) => {
       
       if (response.ok) {
         if (isRegister) {
-          // If registration was successful, show a success message and switch to login
           setSuccessMessage('Registration successful! Please login with your new credentials.');
           setIsRegister(false);
           setUsername('');
           setPassword('');
         } else {
-          // If login was successful, set the token and update login state
           localStorage.setItem('token', data.token);
           setIsLoggedIn(true);
         }
